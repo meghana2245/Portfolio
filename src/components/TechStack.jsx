@@ -15,6 +15,45 @@ export default function TechStack() {
   // Double list to create continuous scrolling
   const marqueeItems = [...techs, ...techs];
 
+  const certs = [
+    {
+      title: 'MongoDB Associate Developer',
+      issuer: 'MongoDB, Inc.',
+      date: 'Apr 2026',
+      badge: 'ASSOCIATE',
+      icon: <Database size={24} />,
+      description: 'Certified in building applications using MongoDB. Validated expertise in data modeling, query optimization, CRUD operations, indexing, and aggregation pipelines.',
+      link: 'https://drive.google.com/file/d/12zV-d4gf_ucx2efJrsIZCe6lTp50Ofu9/view?usp=drivesdk',
+    },
+    {
+      title: 'Certified Professional Python',
+      issuer: 'Python Institute',
+      date: 'June 9, 2025',
+      badge: 'PROFESSIONAL',
+      icon: <Code size={24} />,
+      description: 'Industry validation for advanced software engineering using Python. Covers object-oriented programming, data structures, functional design, concurrency, and library architecture.',
+      link: 'https://drive.google.com/file/d/1EIEUU3IhVQniNTLN3xp9CSiZeWZEIJPN/view?usp=sharing',
+    },
+    {
+      title: 'Quantum Valley Hackathon',
+      issuer: 'Quantum Valley',
+      date: 'Aug 28, 2025',
+      badge: 'PARTICIPANT',
+      icon: <Award size={24} />,
+      description: 'Collaborated on prototyping innovative software solutions and solving complex engineering challenges under compressed timelines.',
+      link: 'https://drive.google.com/file/d/18Na5vi0l3v76HCOOqM-kgDPS0rtOLSMA/view?usp=sharing',
+    },
+    {
+      title: 'Hack MSC 2.0',
+      issuer: 'MSC SRM AP',
+      date: 'Nov 1, 2025',
+      badge: 'PARTICIPANT',
+      icon: <Award size={24} />,
+      description: 'Rapidly prototyped and engineered software solutions under strict time constraints to solve modern Web3 and Full-Stack challenges.',
+      link: 'https://drive.google.com/file/d/1Ha4xRoygN-BU7fvof69mQbkLgAXiDogX/view?usp=sharing',
+    },
+  ];
+
   return (
     <section id="skills" className="relative py-24 bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -75,68 +114,46 @@ export default function TechStack() {
         {/* Certifications Showcase */}
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <span className="font-mono text-xs text-slate-500 uppercase tracking-widest block mb-2">VALIDATED CREDENTIALS</span>
+            <span className="font-mono text-xs text-slate-500 uppercase tracking-widest block mb-2">VALIDATED CREDENTIALS & ACHIEVEMENTS</span>
             <div className="h-[1px] w-20 bg-slate-800 mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Cert 1: MongoDB Associate Developer */}
-            <div className="glass-card rounded-2xl p-6 relative overflow-hidden border border-white/5 group hover:border-electric-blue/30 transition-all duration-300 flex flex-col justify-between">
-              {/* Metallic shine background card effect */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-electric-blue/5 rounded-full blur-2xl group-hover:bg-electric-blue/10 transition-all duration-300"></div>
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-electric-blue via-transparent to-transparent opacity-50"></div>
+            {certs.map((cert, idx) => (
+              <a
+                key={idx}
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card rounded-2xl p-6 relative overflow-hidden border border-white/5 group hover:border-electric-blue/30 transition-all duration-300 flex flex-col justify-between"
+              >
+                {/* Metallic shine background card effect */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-electric-blue/5 rounded-full blur-2xl group-hover:bg-electric-blue/10 transition-all duration-300"></div>
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-electric-blue via-transparent to-transparent opacity-50"></div>
 
-              <div>
-                <div className="flex items-start justify-between mb-6">
-                  <div className="p-3 bg-electric-blue/10 rounded-xl text-electric-blue">
-                    <Database size={24} />
+                <div>
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="p-3 bg-white/5 rounded-xl text-electric-blue group-hover:text-white transition-colors duration-300">
+                      {cert.icon}
+                    </div>
+                    <span className="font-mono text-[10px] text-electric-blue bg-electric-blue/10 border border-electric-blue/20 px-2 py-0.5 rounded-full font-bold">
+                      {cert.badge}
+                    </span>
                   </div>
-                  <span className="font-mono text-[10px] text-electric-blue bg-electric-blue/10 border border-electric-blue/20 px-2 py-0.5 rounded-full font-bold">
-                    ASSOCIATE
-                  </span>
+                  <h3 className="font-heading text-xl font-bold text-white mb-2 group-hover:text-electric-blue transition-colors">
+                    {cert.title}
+                  </h3>
+                  <p className="font-sans text-slate-400 text-sm font-light leading-relaxed">
+                    {cert.description}
+                  </p>
                 </div>
-                <h3 className="font-heading text-xl font-bold text-white mb-2 group-hover:text-electric-blue transition-colors">
-                  MongoDB Associate Developer
-                </h3>
-                <p className="font-sans text-slate-400 text-sm font-light leading-relaxed">
-                  Certified in building applications using MongoDB. Validated expertise in data modeling, query optimization, CRUD operations, indexing, and aggregation pipelines.
-                </p>
-              </div>
 
-              <div className="pt-6 border-t border-white/5 mt-8 flex justify-between items-center font-mono text-xs text-slate-500">
-                <span>ISSUER: MongoDB, Inc.</span>
-                <span className="text-electric-blue/80 font-bold">VERIFIED_CRED</span>
-              </div>
-            </div>
-
-            {/* Cert 2: Certified Professional Python */}
-            <div className="glass-card rounded-2xl p-6 relative overflow-hidden border border-white/5 group hover:border-electric-blue/30 transition-all duration-300 flex flex-col justify-between">
-              {/* Metallic shine background card effect */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-all duration-300"></div>
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-white via-transparent to-transparent opacity-50"></div>
-
-              <div>
-                <div className="flex items-start justify-between mb-6">
-                  <div className="p-3 bg-white/10 rounded-xl text-white">
-                    <Code size={24} />
-                  </div>
-                  <span className="font-mono text-[10px] text-white bg-white/10 border border-white/20 px-2 py-0.5 rounded-full font-bold">
-                    PROFESSIONAL
-                  </span>
+                <div className="pt-6 border-t border-white/5 mt-8 flex justify-between items-center font-mono text-xs text-slate-500">
+                  <span>ISSUER: {cert.issuer}</span>
+                  <span className="text-electric-blue/80 font-bold group-hover:text-white transition-colors">VERIFY_CRED ↗</span>
                 </div>
-                <h3 className="font-heading text-xl font-bold text-white mb-2 group-hover:text-white transition-colors">
-                  Certified Professional Python
-                </h3>
-                <p className="font-sans text-slate-400 text-sm font-light leading-relaxed">
-                  Industry validation for advanced software engineering using Python. Covers object-oriented programming, data structures, functional design, concurrency, and library architecture.
-                </p>
-              </div>
-
-              <div className="pt-6 border-t border-white/5 mt-8 flex justify-between items-center font-mono text-xs text-slate-500">
-                <span>ISSUER: Python Institute</span>
-                <span className="text-white/80 font-bold">VERIFIED_CRED</span>
-              </div>
-            </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>

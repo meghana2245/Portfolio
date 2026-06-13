@@ -87,7 +87,9 @@ function ProjectCard({ project }) {
           </div>
           <div className="flex space-x-2">
             <a
-              href="#"
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 bg-white/3 hover:bg-electric-blue/20 border border-white/5 text-slate-400 hover:text-electric-blue rounded-lg transition-colors duration-200"
               title="View Source Code"
             >
@@ -96,7 +98,9 @@ function ProjectCard({ project }) {
               </svg>
             </a>
             <a
-              href="#"
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 bg-white/3 hover:bg-white/20 border border-white/5 text-slate-400 hover:text-white rounded-lg transition-colors duration-200"
               title="Live Demo"
             >
@@ -140,26 +144,34 @@ export default function Projects() {
   const projects = [
     {
       title: 'CareSync',
-      description: 'Smart Medication Reminder System utilizing twilio alerts to deliver medication reminders dynamically. Includes deep language translations and a fast react panel.',
-      tags: ['FastAPI', 'React.js', 'Twilio API', 'Deep Translator'],
+      description: 'Smart Medication Reminder System built with FastAPI, React.js, and MySQL. Features automated APScheduler notifications, Twilio WhatsApp integration, and multilingual translation support.',
+      tags: ['FastAPI', 'React.js', 'MySQL', 'Twilio API', 'Deep Translator'],
+      github: 'https://github.com/meghana2245/CareSync',
+      live: 'https://medication-caresync.vercel.app/',
       featured: true,
     },
     {
       title: 'Trip Planner',
-      description: 'A full-stack, comprehensive travel coordination website allowing group planning, schedule creation, mapping paths, and JWT credential validation.',
-      tags: ['MERN Stack', 'JWT', 'React Router', 'NodeJS'],
+      description: 'A comprehensive travel platform built with React, Node.js, Express, and MongoDB Atlas. Incorporates JWT-based user authentication, protected routes, and custom travel itinerary APIs.',
+      tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB Atlas', 'JWT'],
+      github: 'https://github.com/meghana2245/TripPlanner-Project',
+      live: 'https://my-trip-planner-app.vercel.app/',
       featured: false,
     },
     {
       title: 'Minify',
-      description: 'Base62 URL shortening system containing customized Base62 character algorithms mapping original URLs onto smart key hashes with detailed click logs.',
-      tags: ['MERN Stack', 'Base62 Hash', 'NodeJS', 'Express'],
+      description: 'A scalable MERN stack URL shortener utilizing a custom Base62 encoding algorithm. Ensures collision-free key generation and fast URL redirection with back-end persistence layers.',
+      tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Base62'],
+      github: 'https://github.com/meghana2245/URL_Shortener',
+      live: 'https://my-url-shortener-app.vercel.app/',
       featured: false,
     },
     {
       title: 'Platea',
-      description: 'A responsive Restaurant Management System providing dynamic billing calculations, seating configurations, inventory listings, and detailed database audits.',
-      tags: ['Python', 'Flask', 'SQL', 'Bootstrap'],
+      description: 'A restaurant management system providing real-time table status tracking with active polling queues, a programmatic floor plan interface, automated billing audits, and role-based workflows.',
+      tags: ['Python', 'Flask', 'SQL', 'HTML5', 'CSS3'],
+      github: 'https://github.com/meghana2245/Restaurant-Management-System',
+      live: 'https://my-platea-app.vercel.app/',
       featured: false,
     },
   ];
