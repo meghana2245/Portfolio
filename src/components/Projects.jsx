@@ -63,6 +63,7 @@ function ProjectCard({ project }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={cardStyle}
+      onClick={() => window.open(project.live, '_blank', 'noopener,noreferrer')}
       className="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between border border-white/5 cursor-pointer select-none"
     >
       {/* Dynamic Glow Overlay - Hardware-accelerated with opacity/gradient */}
@@ -85,11 +86,12 @@ function ProjectCard({ project }) {
           <div className="p-2.5 bg-white/3 border border-white/5 text-slate-400 group-hover:text-electric-blue rounded-xl">
             <Folder size={20} />
           </div>
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 relative z-20">
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="p-2 bg-white/3 hover:bg-electric-blue/20 border border-white/5 text-slate-400 hover:text-electric-blue rounded-lg transition-colors duration-200"
               title="View Source Code"
             >
@@ -101,6 +103,7 @@ function ProjectCard({ project }) {
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="p-2 bg-white/3 hover:bg-white/20 border border-white/5 text-slate-400 hover:text-white rounded-lg transition-colors duration-200"
               title="Live Demo"
             >
