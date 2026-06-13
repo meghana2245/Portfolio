@@ -57,7 +57,7 @@ export default function Navbar() {
         {/* Social Icons + Action */}
         <div className="hidden md:flex items-center space-x-4">
           <a
-            href="https://github.com"
+            href="https://github.com/meghana2245"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 text-slate-400 hover:text-electric-blue hover:scale-110 transition-all duration-200"
@@ -117,7 +117,7 @@ export default function Navbar() {
           ))}
           <div className="flex items-center space-x-6 pt-6">
             <a
-              href="https://github.com"
+              href="https://github.com/meghana2245"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-white/5 rounded-full text-slate-300 hover:text-electric-blue transition-colors"

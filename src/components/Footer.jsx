@@ -25,7 +25,7 @@ export default function Footer() {
         {/* Social Link Badges */}
         <div className="flex space-x-4">
           <a
-            href="https://github.com"
+            href="https://github.com/meghana2245"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 bg-white/3 border border-white/5 text-slate-400 hover:text-electric-blue hover:border-electric-blue/30 rounded-xl transition-all duration-300"
